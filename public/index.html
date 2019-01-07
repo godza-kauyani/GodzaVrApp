@@ -1,0 +1,34 @@
+<html>
+  <head>
+	<link rel="manifest" href="/manifest.json">
+	<script src="js/aframe.min.js" ></script>
+	<script src="/js/aframe-always-fullscreen-component.min.js"></script>
+	<script src="/js/platform.js"></script>
+	<script src="js/aframe-particle-system-component.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/aframe-physics-extras.min.js"></script>
+  </head>
+  <body>
+	<a-scene embedded always-fullscreen> 
+	  <a-asset>
+		<a-asset-item id ="tree" src="assets/models/hulk/scene.gltf"></a-asset-item>
+		<a-asset-item id ="anim" src="/assets/models/anim/scene.gltf"></a-asset-item>
+		<a-asset-item id ="ikaruga" src="/assets/models/ikaruga/scene.gltf"></a-asset-item>
+		<a-asset-item id ="sword" src="/assets/models/sword/scene.gltf"></a-asset-item>
+	
+	  </a-asset>
+	  <a-entity position ="0 2.25 -15" particle-system ="preset: rain" ></a-entity >
+	  <a-entity environment >
+		
+		<a-gltf-model src ="#ikaruga" 
+		  			  scale='0.01 0.01 0.01'
+					  position='0 1 100'
+		  ></a-gltf-model>
+		
+	  </a-entity >
+	</a-scene>
+<script>
+    navigator.serviceWorker.register('/sw.js');
+</script>
+  </body>
+</html>
